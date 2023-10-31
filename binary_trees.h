@@ -3,6 +3,7 @@
 
 #include <stddef.h>
 
+binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
 
 /**
  * struct binary_tree_s - Binary tree node
