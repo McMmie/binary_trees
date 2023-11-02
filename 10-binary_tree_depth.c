@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdlib.h>
 #include "binary_trees.h"
 
 /**
@@ -10,13 +10,18 @@
 
 size_t binary_tree_depth(const binary_tree_t *tree)
 {
-	size_t depth;
+	size_t depth = 0;
+	const binary_tree_t *temp;
 
 	if (tree == NULL)
 		return (0);
-	
-	binary_tree_depth(tree->left);
-	binary_tree_depth(tree->right);
 
-	return depth++;
+	temp = tree;
+	while (temp->parent != NULL)
+	{
+		depth++;
+		temp = temp->parent;
+	}
+
+	return (depth);
 }
